@@ -1,12 +1,3 @@
-NeoBundle 'zhaocai/GoldenView.Vim' "Always have a nice view for vim split windows
-NeoBundle 'jiangmiao/auto-pairs'
-
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
-NeoBundle 'tomtom/tlib_vim'
-NeoBundle 'garbas/vim-snipmate'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat'
-
 set noswapfile
 set t_Co=256
 set guitablabel=%N\ %t
