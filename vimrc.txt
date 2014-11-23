@@ -28,8 +28,14 @@ NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'garbas/vim-snipmate'
+NeoBundle 'honza/vim-snippets'
+
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
+
+NeoBundle 'jlanzarotta/bufexplorer'
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'xolox/vim-session'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
