@@ -64,7 +64,7 @@ nnoremap <leader>tn :tabnew .<cr>
 nnoremap <leader>dp df)
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>v V`]
-"nnoremap <Space> @q
+nnoremap <Space> @q
 
 imap sse $self->
 imap <F1> ->
