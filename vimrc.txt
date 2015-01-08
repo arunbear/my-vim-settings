@@ -32,6 +32,7 @@ NeoBundle 'honza/vim-snippets'
 
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-commentary'
 
 NeoBundle 'jlanzarotta/bufexplorer'
 NeoBundle 'xolox/vim-misc'
