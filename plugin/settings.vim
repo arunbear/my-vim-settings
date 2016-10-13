@@ -43,7 +43,7 @@ source $VIMRUNTIME/menu.vim
 set wildcharm=<C-Z>
 map <F3> :emenu <C-Z>
 
-imap jj <Esc>:w<cr>
+imap jk <Esc>:w<cr>
 " Fast editing of the .vimrc
 nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc<cr>
 " When vimrc is edited, reload it
@@ -61,6 +61,8 @@ set splitright
 
 nnoremap <leader>, :w<cr>
 nnoremap <leader>tn :tabnew .<cr>
+nnoremap 'te :tabedit %<cr>
+nnoremap 'tc :tabclose<cr>
 nnoremap <leader>dp df)
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>v V`]
