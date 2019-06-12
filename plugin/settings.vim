@@ -41,7 +41,6 @@ set wildmenu
 set wildmode=longest:full
 source $VIMRUNTIME/menu.vim
 set wildcharm=<C-Z>
-map <F3> :emenu <C-Z>
 
 imap jk <Esc>:w<cr>
 " Fast editing of the .vimrc
@@ -67,21 +66,8 @@ nnoremap <leader>dp df)
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>v V`]
 nnoremap <Space> @q
+nnoremap <leader>em :emenu <C-Z>
 
-imap sse $self->
-imap <F1> ->
-imap <F2> <Space>=><Space>
-map <F3> :Tlist<CR>
-map <F4> i$<ESC>
-imap <F4> $_
-imap <F5> $
-
-map <F10> i_
-imap <F10> {}<LEFT>
-map #sw iuse strict;<CR>use warnings;<CR>use Data::Dumper;<CR>use Getopt::Long;<CR>
-imap #du Dumper()
-imap #su sub  {<CR>;<CR><Up><Up><RIGHT><RIGHT><RIGHT>
-imap #me sub  {<CR>my ($self) = @_;<CR><Up><Up>
 imap #dd use Data::Dump 'pp'; die pp();
 
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
