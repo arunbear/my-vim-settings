@@ -46,10 +46,10 @@ map <F3> :emenu <C-Z>
 imap jk <Esc>:w<cr>
 " Fast editing of the .vimrc
 nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc<cr>
-" When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vimrc
-
 nnoremap <leader>sv :so ~/.vimrc<cr>
+nnoremap <leader>st :Startify<cr>
+nnoremap ; :
+nnoremap : ;
 
 noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
@@ -84,17 +84,8 @@ imap #su sub  {<CR>;<CR><Up><Up><RIGHT><RIGHT><RIGHT>
 imap #me sub  {<CR>my ($self) = @_;<CR><Up><Up>
 imap #dd use Data::Dump 'pp'; die pp();
 
-autocmd VimEnter * call LoadSession()
-autocmd VimLeave * call SaveSession()
-
-function! SaveSession()
-    execute 'mksession! $HOME/.vim/sessions/session.vim'
-endfunction    
-
-function! LoadSession()
-    if argc() == 0
-        execute 'source $HOME/.vim/sessions/session.vim'
-    endif
-endfunction    
-
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
