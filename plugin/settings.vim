@@ -42,13 +42,13 @@ set wildmode=longest:full
 source $VIMRUNTIME/menu.vim
 set wildcharm=<C-Z>
 
-imap jk <Esc>:w<cr>
 " Fast editing of the .vimrc
 nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc<cr>
 nnoremap <leader>sv :so ~/.vimrc<cr>
 nnoremap <leader>st :Startify<cr>
 nnoremap ; :
 nnoremap : ;
+imap jk <Esc>;w<cr>
 
 noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
