@@ -70,7 +70,13 @@ nnoremap <leader>em :emenu <C-Z>
 
 imap #dd use Data::Dump 'pp'; die pp();
 
-autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+function! ChangePath()
+    if bufname("") !~ "^\[A-Za-z0-9\]*://"
+        lcd %:p:h
+    endif
+endfunction
+
+autocmd BufEnter * silent! call ChangePath()
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
