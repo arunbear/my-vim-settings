@@ -1,0 +1,106 @@
+set noswapfile
+set t_Co=256
+set guitablabel=%N\ %t
+set nocompatible
+set incsearch
+set showmatch
+set smartindent
+set autoindent
+set background=dark
+set backspace=indent,eol,start
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set shiftround
+
+set matchpairs+=<:>
+"set iskeyword+=:
+set cscopeprg=/usr/bin/cscope
+set cscopetag
+set cscopeverbose
+set fileencodings=utf-8,latin1
+
+set history=50
+set hlsearch
+set ruler
+set viminfo='20,\"50
+set undofile
+
+set relativenumber
+set number
+set gdefault
+syn on
+filetype plugin on
+set shell=/bin/zsh
+set complete-=i
+:colorscheme elflord
+
+set wildmenu
+set wildmode=longest:full
+source $VIMRUNTIME/menu.vim
+set wildcharm=<C-Z>
+
+" Fast editing of the .vimrc
+nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc<cr>
+nnoremap <leader>sv :so ~/.vimrc<cr>
+nnoremap <leader>st :Startify<cr>
+nnoremap ; :
+nnoremap : ;
+imap jk <Esc>;w<cr>
+
+set splitbelow
+set splitright
+
+nnoremap <leader>, :w<cr>
+nnoremap <leader>tn :tabnew .<cr>
+nnoremap 'te :tabedit %<cr>
+nnoremap 'tc :tabclose<cr>
+nnoremap <leader>dp df)
+nnoremap <leader><space> :noh<cr>
+nnoremap <leader>v V`]
+nnoremap <Space> @q
+nnoremap <leader>em :emenu <C-Z>
+
+imap #dd use Data::Dump 'pp'; die pp();
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:startify_files_number = 20
+let g:startify_bookmarks = [
+    \ '~/src/xtdc1/vim.files.txt',
+    \ '~/src/xtdc2/vim.files.txt',
+    \ '~/src/xtdc3/vim.files.txt'
+    \ ]
+
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
+" sessions
+set sessionoptions=buffers
+autocmd VimLeave * mksession! source ./session.vim
+autocmd VimEnter source ./session.vim
+
+set list listchars=tab:»·,trail:▧
+set rtp+=/usr/local/opt/fzf
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" nmap <unique> <leader>pb <Plug>(PickerBuffer)
+
+function SaveAsHere(name)
+    let new_file = a:name
+    echom dirHere
+    echom a:name
+
+    lcd %:h
+    " saveas a:name
+    saveas new_file
+    lcd -
+endfunction
